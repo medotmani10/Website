@@ -122,6 +122,12 @@ const adminlogin = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    console.log("Attempting admin login:");
+    console.log("Received email:", email);
+    console.log("Received password:", password);
+    console.log("Expected ADMIN_EMAIL:", process.env.ADMIN_EMAIL);
+    console.log("Expected ADMIN_PASSWORD:", process.env.ADMIN_PASSWORD);
+
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
       const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
       return res.json({ token, success: true });

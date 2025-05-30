@@ -28,30 +28,41 @@ const limiter = rateLimit({
 });
 
 // Security middlewares
-app.use(limiter);
-app.use(helmet());
+app.use(helmet({
+  crossOriginEmbedderPolicy: false,
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      scriptSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https:"],
+    },
+  },
+}));
+
 app.use(compression());
+app.use(limiter);
 
-// Middleware
-app.use(express.json({ limit: '50mb' }));
-app.use(express.urlencoded({ extended: true, limit: '50mb' }));
-app.use(trackAPIStats);
-
-
-// CORS Configuration
+// CORS configuration
 app.use(cors({
   origin: [
-    'http://localhost:4000',
-    'http://localhost:5174',
+    'http://localhost:3000',
     'http://localhost:5173',
+    'http://localhost:5174',
     'https://buildestate.vercel.app',
-    'https://real-estate-website-admin.onrender.com',
-    'https://real-estate-website-backend-zfu7.onrender.com',
-  ],
+    process.env.WEBSITE_URL
+  ].filter(Boolean),
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'], // Added HEAD
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
+
+// Body parsing middleware
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// API stats tracking
+app.use(trackAPIStats);
 
 // Database connection
 connectdb().then(() => {
@@ -59,7 +70,6 @@ connectdb().then(() => {
 }).catch(err => {
   console.error('Database connection error:', err);
 });
-
 
 // API Routes
 app.use('/api/products', propertyrouter);
@@ -119,12 +129,12 @@ app.get("/", (req, res) => {
           <h1>BuildEstate API</h1>
           <p>Status: <span class="status">Online</span></p>
           <p>Server Time: ${new Date().toLocaleString()}</p>
-          
+
           <div class="info">
-            <p>The BuildEstate API is running properly. This backend serves property listings, user authentication, 
+            <p>The BuildEstate API is running properly. This backend serves property listings, user authentication,
             and AI analysis features for the BuildEstate property platform.</p>
           </div>
-          
+
           <div class="footer">
             <p>© ${new Date().getFullYear()} BuildEstate. All rights reserved.</p>
           </div>
