@@ -1,0 +1,35 @@
+{
+  "name": "buildestate-monorepo",
+  "version": "1.0.0",
+  "description": "BuildEstate - Multilingual Real Estate Platform",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev",
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "install-admin": "cd admin && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend && npm run install-admin",
+    "build-frontend": "cd frontend && npm run build",
+    "build-admin": "cd admin && npm run build",
+    "deploy-frontend": "cd frontend && npm run build && firebase deploy --only hosting",
+    "deploy-admin": "cd admin && npm run build && firebase deploy --only hosting"
+  },
+  "keywords": [
+    "real-estate",
+    "rental",
+    "multilingual",
+    "react",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "BuildEstate Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/medotmani10/Website.git"
+  }
+}
