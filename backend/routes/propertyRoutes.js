@@ -1,12 +1,12 @@
 import express from 'express';
-import { searchProperties, getLocationTrends } from '../controller/propertyController.js';
+import { searchRentalProperties, getLocationTrends } from '../controller/propertyController.js';
 
 const router = express.Router();
 
-// Route to search for properties
-router.post('/properties/search', searchProperties);
+// Route to search for rental properties
+router.post('/rentals/search', searchRentalProperties);
 
-// Route to get location trends
-router.get('/locations/:city/trends', getLocationTrends);
+// Route to get location trends for rentals
+router.get('/locations/:city/rental-trends', getLocationTrends);
 
 export default router;

@@ -7,8 +7,8 @@ import { getEmailTemplate } from "../email.js";
 
 const formatRecentProperties = (properties) => {
   return properties.map((property) => ({
-    type: "property",
-    description: `New property listed: ${property.title}`,
+    type: "rental",
+    description: `New rental property listed: ${property.title}`,
     timestamp: property.createdAt,
   }));
 };
@@ -28,15 +28,15 @@ const formatRecentAppointments = (appointments) => {
 export const getAdminStats = async (req, res) => {
   try {
     const [
-      totalProperties,
-      activeListings,
+      totalRentals,
+      availableRentals,
       totalUsers,
       pendingAppointments,
       recentActivity,
       viewsData,
     ] = await Promise.all([
       Property.countDocuments(),
-      Property.countDocuments({ status: "active" }),
+      Property.countDocuments({ availability: "Available" }),
       User.countDocuments(),
       Appointment.countDocuments({ status: "pending" }),
       getRecentActivity(),
@@ -46,8 +46,8 @@ export const getAdminStats = async (req, res) => {
     res.json({
       success: true,
       stats: {
-        totalProperties,
-        activeListings,
+        totalRentals,
+        availableRentals,
         totalUsers,
         pendingAppointments,
         recentActivity,
@@ -132,7 +132,7 @@ const getViewsData = async () => {
       labels,
       datasets: [
         {
-          label: "Property Views",
+          label: "Rental Property Views",
           data,
           borderColor: "rgb(75, 192, 192)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",
@@ -147,7 +147,7 @@ const getViewsData = async () => {
       labels: [],
       datasets: [
         {
-          label: "Property Views",
+          label: "Rental Property Views",
           data: [],
           borderColor: "rgb(75, 192, 192)",
           backgroundColor: "rgba(75, 192, 192, 0.2)",

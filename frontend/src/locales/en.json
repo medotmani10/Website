@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "properties": "Properties",
+    "about": "About",
+    "contact": "Contact",
+    "news": "News"
+  },
+  "hero": {
+    "title": "Find Your Perfect Rental",
+    "subtitle": "Discover the ideal rental property with our comprehensive rental platform",
+    "searchPlaceholder": "Search by location, property type...",
+    "searchButton": "Search Rentals",
+    "featuredProperties": "Featured Rentals"
+  },
+  "properties": {
+    "title": "Rental Properties",
+    "subtitle": "Explore our extensive collection of premium rental properties",
+    "filters": {
+      "all": "All Rentals",
+      "house": "Houses",
+      "apartment": "Apartments",
+      "villa": "Villas",
+      "condo": "Condos",
+      "priceRange": "Rent Range",
+      "bedrooms": "Bedrooms",
+      "bathrooms": "Bathrooms",
+      "location": "Location"
+    },
+    "details": {
+      "price": "Monthly Rent",
+      "beds": "Bedrooms",
+      "baths": "Bathrooms",
+      "sqft": "Sq Ft",
+      "type": "Type",
+      "status": "Availability",
+      "location": "Location",
+      "description": "Description",
+      "amenities": "Amenities",
+      "contact": "Contact by Phone",
+      "phone": "Phone",
+      "viewDetails": "View Details",
+      "callNow": "Call Now",
+      "bookByPhone": "Book by Phone Only"
+    }
+  },
+  "about": {
+    "title": "About BuildEstate",
+    "subtitle": "Your trusted partner in property rentals",
+    "description": "We are a leading rental property company dedicated to helping you find your perfect rental home. With years of experience and a commitment to excellence, we provide comprehensive rental services.",
+    "mission": "Our Mission",
+    "vision": "Our Vision",
+    "values": "Our Values"
+  },
+  "contact": {
+    "title": "Contact Us by Phone",
+    "subtitle": "Call us directly for rental inquiries and bookings",
+    "phoneOnly": {
+      "title": "Phone Booking Only",
+      "description": "We operate on a phone-only booking system for personalized service",
+      "callToBook": "Call to Book Your Rental",
+      "availableHours": "Available Hours",
+      "phoneNumber": "Phone Number"
+    },
+    "info": {
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Mon-Fri: 9AM-6PM, Sat: 10AM-4PM"
+    }
+  },
+  "news": {
+    "title": "Latest News",
+    "subtitle": "Stay updated with real estate trends and market insights",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "category": "Category",
+    "author": "Author"
+  },
+  "footer": {
+    "description": "Your trusted partner in finding the perfect property. We provide comprehensive real estate services with excellence and integrity.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contact": "Contact Info",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try Again",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "reset": "Reset",
+    "apply": "Apply",
+    "submit": "Submit",
+    "required": "Required",
+    "optional": "Optional",
+    "yes": "Yes",
+    "no": "No",
+    "confirm": "Confirm",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Information"
+  },
+  "auth": {
+    "login": {
+      "title": "Login to Your Account",
+      "email": "Email Address",
+      "password": "Password",
+      "remember": "Remember me",
+      "forgot": "Forgot password?",
+      "submit": "Sign In",
+      "noAccount": "Don't have an account?",
+      "register": "Sign up here"
+    },
+    "register": {
+      "title": "Create New Account",
+      "name": "Full Name",
+      "email": "Email Address",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "terms": "I agree to the Terms and Conditions",
+      "submit": "Create Account",
+      "hasAccount": "Already have an account?",
+      "login": "Sign in here"
+    }
+  }
+}

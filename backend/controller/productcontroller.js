@@ -8,12 +8,12 @@ const addproperty = async (req, res) => {
         console.log("Request body:", req.body);
         console.log("Request files:", req.files ? Object.keys(req.files) : 'No files');
 
-        const { title, location, price, beds, baths, sqft, type, availability, description, amenities, phone } = req.body;
+        const { title, location, monthlyRent, beds, baths, sqft, type, availability, rentalType, description, amenities, phone } = req.body;
 
         // Validate required fields
-        if (!title || !location || !price || !type) {
+        if (!title || !location || !monthlyRent || !type) {
             return res.status(400).json({
-                message: "Missing required fields: title, location, price, type",
+                message: "Missing required fields: title, location, monthlyRent, type",
                 success: false
             });
         }
@@ -118,16 +118,17 @@ const addproperty = async (req, res) => {
             }
         }
 
-        // Create a new product
+        // Create a new rental property
         const product = new Property({
             title,
             location,
-            price: Number(price),
+            monthlyRent: Number(monthlyRent),
             beds: Number(beds) || 0,
             baths: Number(baths) || 0,
             sqft: Number(sqft) || 0,
             type,
-            availability: availability || 'available',
+            availability: availability || 'Available',
+            rentalType: rentalType || 'Monthly',
             description: description || '',
             amenities: parsedAmenities || [],
             image: imageUrls,
@@ -139,7 +140,7 @@ const addproperty = async (req, res) => {
         console.log("✅ Property saved successfully with ID:", product._id);
 
         res.json({
-            message: "Property added successfully",
+            message: "Rental property added successfully",
             success: true,
             propertyId: product._id
         });
@@ -178,7 +179,7 @@ const removeproperty = async (req, res) => {
 
 const updateproperty = async (req, res) => {
     try {
-        const { id, title, location, price, beds, baths, sqft, type, availability, description, amenities,phone } = req.body;
+        const { id, title, location, monthlyRent, beds, baths, sqft, type, availability, rentalType, description, amenities, phone } = req.body;
 
         const property = await Property.findById(id);
         if (!property) {
@@ -190,12 +191,13 @@ const updateproperty = async (req, res) => {
             // No new images provided
             property.title = title;
             property.location = location;
-            property.price = price;
+            property.monthlyRent = monthlyRent;
             property.beds = beds;
             property.baths = baths;
             property.sqft = sqft;
             property.type = type;
             property.availability = availability;
+            property.rentalType = rentalType;
             property.description = description;
             property.amenities = amenities;
             property.phone = phone;
@@ -228,12 +230,13 @@ const updateproperty = async (req, res) => {
 
         property.title = title;
         property.location = location;
-        property.price = price;
+        property.monthlyRent = monthlyRent;
         property.beds = beds;
         property.baths = baths;
         property.sqft = sqft;
         property.type = type;
         property.availability = availability;
+        property.rentalType = rentalType;
         property.description = description;
         property.amenities = amenities;
         property.image = imageUrls;

@@ -9,11 +9,11 @@ const propertySchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  price: {
+  monthlyRent: {
     type: Number,
     required: true,
   },
-  image: { 
+  image: {
     type: [String],
     required: true
  },
@@ -36,6 +36,14 @@ const propertySchema = new mongoose.Schema({
   availability: {
     type: String,
     required: true,
+    enum: ['Available', 'Rented', 'Maintenance'],
+    default: 'Available'
+  },
+  rentalType: {
+    type: String,
+    required: true,
+    enum: ['Monthly', 'Yearly', 'Short-term'],
+    default: 'Monthly'
   },
   description: {
     type: String,

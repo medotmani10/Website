@@ -1,30 +1,32 @@
 import firecrawlService from '../services/firecrawlService.js';
 import aiService from '../services/aiService.js';
 
-export const searchProperties = async (req, res) => {
+export const searchRentalProperties = async (req, res) => {
     try {
-        const { city, maxPrice, propertyCategory, propertyType, limit = 6 } = req.body;
+        const { city, maxRent, propertyCategory, propertyType, rentalType = 'Monthly', limit = 6 } = req.body;
 
-        if (!city || !maxPrice) {
-            return res.status(400).json({ success: false, message: 'City and maxPrice are required' });
+        if (!city || !maxRent) {
+            return res.status(400).json({ success: false, message: 'City and maxRent are required' });
         }
 
-        // Extract property data using Firecrawl, specifying the limit
-        const propertiesData = await firecrawlService.findProperties(
-            city, 
-            maxPrice, 
+        // Extract rental property data using Firecrawl, specifying the limit
+        const propertiesData = await firecrawlService.findRentalProperties(
+            city,
+            maxRent,
             propertyCategory || 'Residential',
-            propertyType || 'Flat',
+            propertyType || 'Apartment',
+            rentalType,
             Math.min(limit, 6) // Limit to max 6 properties
         );
 
-        // Analyze the properties using AI
-        const analysis = await aiService.analyzeProperties(
+        // Analyze the rental properties using AI
+        const analysis = await aiService.analyzeRentalProperties(
             propertiesData.properties,
             city,
-            maxPrice,
+            maxRent,
             propertyCategory || 'Residential',
-            propertyType || 'Flat'
+            propertyType || 'Apartment',
+            rentalType
         );
 
         res.json({
@@ -33,10 +35,10 @@ export const searchProperties = async (req, res) => {
             analysis
         });
     } catch (error) {
-        console.error('Error searching properties:', error);
-        res.status(500).json({ 
-            success: false, 
-            message: 'Failed to search properties',
+        console.error('Error searching rental properties:', error);
+        res.status(500).json({
+            success: false,
+            message: 'Failed to search rental properties',
             error: error.message
         });
     }
@@ -67,8 +69,8 @@ export const getLocationTrends = async (req, res) => {
         });
     } catch (error) {
         console.error('Error getting location trends:', error);
-        res.status(500).json({ 
-            success: false, 
+        res.status(500).json({
+            success: false,
             message: 'Failed to get location trends',
             error: error.message
         });

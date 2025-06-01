@@ -29,6 +29,48 @@ jspm_packages/
 .env.test.local
 .env.production.local
 
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Test files
+test-*.html
+*-test.html
+admin-*-test.html
+
+# Temporary deployment files
+*.md.backup
+firebase-debug.log
+.firebase/
+
+# Uploads directory
+uploads/
+
+# Sharp cache
+.sharp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # MacOS
 .DS_Store
 

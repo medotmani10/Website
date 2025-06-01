@@ -3,6 +3,7 @@ import { useSpring, animated } from "@react-spring/web";
 import { Search, MapPin, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
 import heroimage from "../assets/images/heroimage.png";
 import { RadialGradient } from "react-text-gradients";
 
@@ -57,6 +58,7 @@ export const AnimatedContainer = ({ children, distance = 100, direction = "verti
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
 
@@ -95,14 +97,12 @@ const Hero = () => {
                 <RadialGradient
                   gradient={["circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%"]}
                 >
-                  Find Your Perfect
-                  <br />
-                  <span className="text-gray-800">Living Space</span>
+                  {t('hero.title')}
                 </RadialGradient>
               </h1>
 
               <p className="text-slate-700 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
-                Discover your dream home in the most sought-after locations
+                {t('hero.subtitle')}
               </p>
             </motion.div>
 
@@ -121,17 +121,17 @@ const Hero = () => {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => setShowSuggestions(true)}
-                    placeholder="Enter location..."
+                    placeholder={t('hero.searchPlaceholder')}
                     className="w-full pl-10 pr-4 py-3 rounded-xl border-0 bg-white/90 shadow-sm focus:ring-2 focus:ring-blue-500 transition-all"
                   />
                 </div>
                 <button
                   onClick={() => handleSubmit()}
-                  className="md:w-auto w-full bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 
+                  className="md:w-auto w-full bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700
                     transition-colors flex items-center justify-center gap-2 font-medium shadow-md"
                 >
                   <Search className="w-5 h-5" />
-                  <span>Search</span>
+                  <span>{t('hero.searchButton')}</span>
                 </button>
               </div>
 
@@ -155,7 +155,7 @@ const Hero = () => {
                             setSearchQuery(location);
                             handleSubmit(location);
                           }}
-                          className="w-full text-left px-3 py-2 hover:bg-gray-50 rounded-lg flex items-center 
+                          className="w-full text-left px-3 py-2 hover:bg-gray-50 rounded-lg flex items-center
                             justify-between text-gray-700 transition-colors"
                         >
                           <div className="flex items-center">

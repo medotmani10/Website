@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "properties": "Propriétés",
+    "about": "À propos",
+    "contact": "Contact",
+    "news": "Actualités"
+  },
+  "hero": {
+    "title": "Trouvez votre location parfaite",
+    "subtitle": "Découvrez la propriété de location idéale avec notre plateforme de location complète",
+    "searchPlaceholder": "Rechercher par lieu, type de propriété...",
+    "searchButton": "Rechercher des locations",
+    "featuredProperties": "Locations en vedette"
+  },
+  "properties": {
+    "title": "Propriétés de location",
+    "subtitle": "Explorez notre vaste collection de propriétés de location premium",
+    "filters": {
+      "all": "Toutes les locations",
+      "house": "Maisons",
+      "apartment": "Appartements",
+      "villa": "Villas",
+      "condo": "Condos",
+      "priceRange": "Gamme de loyer",
+      "bedrooms": "Chambres",
+      "bathrooms": "Salles de bain",
+      "location": "Emplacement"
+    },
+    "details": {
+      "price": "Loyer mensuel",
+      "beds": "Chambres",
+      "baths": "Salles de bain",
+      "sqft": "Pieds carrés",
+      "type": "Type",
+      "status": "Disponibilité",
+      "location": "Emplacement",
+      "description": "Description",
+      "amenities": "Commodités",
+      "contact": "Contact par téléphone",
+      "phone": "Téléphone",
+      "viewDetails": "Voir les détails",
+      "callNow": "Appeler maintenant",
+      "bookByPhone": "Réservation par téléphone uniquement"
+    }
+  },
+  "about": {
+    "title": "À propos de BuildEstate",
+    "subtitle": "Votre partenaire de confiance en location immobilière",
+    "description": "Nous sommes une entreprise de location immobilière leader dédiée à vous aider à trouver votre maison de location parfaite. Avec des années d'expérience et un engagement envers l'excellence, nous fournissons des services de location complets.",
+    "mission": "Notre mission",
+    "vision": "Notre vision",
+    "values": "Nos valeurs"
+  },
+  "contact": {
+    "title": "Contactez-nous par téléphone",
+    "subtitle": "Appelez-nous directement pour les demandes de location et les réservations",
+    "phoneOnly": {
+      "title": "Réservation par téléphone uniquement",
+      "description": "Nous fonctionnons avec un système de réservation téléphonique pour un service personnalisé",
+      "callToBook": "Appelez pour réserver votre location",
+      "availableHours": "Heures de disponibilité",
+      "phoneNumber": "Numéro de téléphone"
+    },
+    "info": {
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "hours": "Lun-Ven: 9h-18h, Sam: 10h-16h"
+    }
+  },
+  "news": {
+    "title": "Dernières nouvelles",
+    "subtitle": "Restez informé des tendances immobilières et des perspectives du marché",
+    "readMore": "Lire la suite",
+    "publishedOn": "Publié le",
+    "category": "Catégorie",
+    "author": "Auteur"
+  },
+  "footer": {
+    "description": "Votre partenaire de confiance pour trouver la propriété parfaite. Nous fournissons des services immobiliers complets avec excellence et intégrité.",
+    "quickLinks": "Liens rapides",
+    "services": "Services",
+    "contact": "Informations de contact",
+    "followUs": "Suivez-nous",
+    "rights": "Tous droits réservés",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions de service"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite",
+    "retry": "Réessayer",
+    "close": "Fermer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "reset": "Réinitialiser",
+    "apply": "Appliquer",
+    "submit": "Soumettre",
+    "required": "Requis",
+    "optional": "Optionnel",
+    "yes": "Oui",
+    "no": "Non",
+    "confirm": "Confirmer",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "info": "Information"
+  },
+  "auth": {
+    "login": {
+      "title": "Connectez-vous à votre compte",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "remember": "Se souvenir de moi",
+      "forgot": "Mot de passe oublié?",
+      "submit": "Se connecter",
+      "noAccount": "Vous n'avez pas de compte?",
+      "register": "Inscrivez-vous ici"
+    },
+    "register": {
+      "title": "Créer un nouveau compte",
+      "name": "Nom complet",
+      "email": "Adresse e-mail",
+      "password": "Mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "terms": "J'accepte les termes et conditions",
+      "submit": "Créer un compte",
+      "hasAccount": "Vous avez déjà un compte?",
+      "login": "Connectez-vous ici"
+    }
+  }
+}
